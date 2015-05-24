@@ -1,0 +1,162 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Front End Tooling
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      section
+        h1 The wonderful world of front end tools
+        h2 Aaron Powell | @slace | www.aaron-powell.com
+
+      section
+        h2.bullet Where?
+        ul
+          li We need to get external dependencies
+          li NuGet isn't the answer
+          li
+            pre npm
+          li
+            pre bower
+
+       section
+        img(src='https://rawgit.com/npm/docs/master/public/images/npm.svg', alt='npm')
+
+       section
+        code.bullet npm install jquery
+        pre.bullet
+          code.language-javascript.
+            var $ = require('jquery');
+            $('.foo').click(function () {
+              console.log('clicky!');
+            });
+
+       section
+        img(src='https://rawgit.com/bower/bower.github.io/master/img/bower-logo.svg', alt='bower')
+
+       section
+        code.bullet npm install -g bower
+        code.bullet bower install jquery
+        p.bullet Reference from bower_modules and go!
+
+      section
+        h2 And plenty more
+
+      section
+        h2.bullet What?
+        ul
+          li We need to make files
+          li Start with templates
+
+      section
+        img(src='https://rawgit.com/yeoman/yeoman.io/master/app/assets/img/yeoman.png', alt='yeoman')
+
+      section
+        code.bullet npm install -g yo
+        code.bullet npm install -g generator-aspnet
+        code.bullet yo aspnet
+
+      section
+        h2.bullet How?
+        ul
+          li AMD, CommonJS, UMD, random scripts
+          li Dependencies everywhere
+
+      section
+        h2.bullet Which module system?
+        ul
+          li AMD
+          li Use ES6 modules
+          li Pre-build dependency graph
+
+      section
+        img(src='https://rawgit.com/substack/browserify-website/gh-pages/images/browserify.svg', alt='browserify')
+
+      section
+        code.bullet npm install -g browserify
+        pre.bullet
+          code.language-javascript.
+            var add = function (x, y) {
+              return x + y;
+            };
+            
+            module.exports = add;
+        pre.bullet
+          code.language-javascript.
+            var add = require('./add');
+            console.log(add(1, 2));
+
+      section
+        img(src='https://camo.githubusercontent.com/f1d103872f836f33dbff7a74ed819004f792a4ad/687474703a2f2f7765627061636b2e6769746875622e696f2f6173736574732f6c6f676f2e706e67', alt='webpack')
+
+      section
+        code.bullet npm install -g webpack
+        pre.bullet
+          code.language-javascript.
+            var add = function (x, y) {
+              return x + y;
+            };
+            
+            module.exports = add;
+        pre.bullet
+          code.language-javascript.
+            require(['./add'], function (add) {
+              console.log(add(1, 2));
+            });
+
+      section
+        h2.bullet Which one?
+        ul
+          li I use browserify
+          li It seems more flexible
+          li Simple to extend
+
+      section
+        h2.bullet When?
+        ul
+          li Resolve deps, transpile, combine files, minify
+          li Different configs for different environments
+
+      section
+        img(src='https://rawgit.com/gruntjs/gruntjs.com/master/src/img/grunt-logo.svg', alt='grunt')
+
+      section
+        ul
+          li Generic task runner
+          li
+            code npm install -g grunt
+          li Config driven
+
+      section
+        img(src='https://rawgit.com/gulpjs/artwork/master/gulp.svg', alt='gulp')
+
+      section
+        ul
+          li Streaming task runner
+          li
+            code npm install -g gulp
+
+      section
+        h2.bullet Which one?
+        ul
+          li Was a grunt man
+          li Moving to gulp
+          li Streaming seems more logical
+          li grunt feels very config based, gulp feels more programmatic
+
+      section
+        h2.bullet Using with ASPNet today
+        ul
+          li Don't use System.Optimization
+          li Do install Task Runner Explorer (ITB 2015) to run gulp/grunt
+          li Do use npm (or bower if you must) for external dependencies
+          li Do treat client side assets build like .NET build
+          li Don't be afraid to add it to your project today
+
+    script(src='build/build.js')
