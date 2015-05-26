@@ -34,9 +34,11 @@ gulp.task('eslint', function () {
         .pipe(eslint.failOnError());
 });
 
-gulp.task('default', ['clean', 'eslint'], function () {
+gulp.task('browserify', function () {
     return getBrowserify();
-});
+})
+
+gulp.task('default', ['clean', 'eslint', 'browserify']);
 
 gulp.task('release', ['clean', 'eslint'], function () {
     return getBrowserify()
@@ -45,4 +47,8 @@ gulp.task('release', ['clean', 'eslint'], function () {
         .pipe(uglify())
         .on('error', gutil.log)
         .pipe(sourcemaps.write('./'));
+});
+
+gulp.task('watch', function () {
+    gulp.watch(['./wwwroot/src/**/*.js', './wwwroot/src/**/*.jsx'], ['eslint', 'browserify']);
 });

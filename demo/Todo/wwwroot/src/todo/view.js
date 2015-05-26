@@ -13,15 +13,17 @@ class Todo extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="todo">
                 <h1>Awesome todo!</h1>
 
                 <section>
-                    <input type="text" onChange={this.change.bind(this)} value={this.state.current} />
+                    <h2>Add new item</h2>
+                    <input type="text" onChange={this.change.bind(this)} value={this.state.current} placeholder="Write a talk..." />
                     <i className="fa fa-plus" onClick={this.save.bind(this)}></i>
                 </section>
 
                 <aside>
+                    <h2>Things to do</h2>
                     <ul>
                         {this.state.todos.map(todo => <TodoItem item={todo} />)}
                     </ul>

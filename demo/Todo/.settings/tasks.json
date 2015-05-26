@@ -1,13 +1,18 @@
 {
     "version": "0.1.0",
-    "command": "./node_modules/.bin/gulp",
+    "command": "C:/_Projects/github/ps-nvmw/vs-iojs/v2.0.1/iojs.exe ${workspaceRoot}/node_modules/gulp/bin/gulp.js",
     "isShellCommand": true,
     "args": [
         "--no-color"
     ],
-    "tasks": [
-        {
+    "tasks": [{
             "taskName": "default"
+        }, {
+            "taskName": "watch",
+            "args": ["watch"]
+        }, {
+            "taskName": "release",
+            "args": ["release"]
         }
     ]
 }
