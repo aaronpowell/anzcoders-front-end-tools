@@ -1,0 +1,28 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "babel-eslint": "^3.1.9",
+    "babelify": "^6.1.1",
+    "browserify": "^10.2.1",
+    "del": "^1.2.0",
+    "eslint": "^0.21.2",
+    "eslint-plugin-react": "^2.3.0",
+    "gulp": "^3.8.11",
+    "gulp-eslint": "^0.12.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.4",
+    "react": "^0.13.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
